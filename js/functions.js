@@ -15,3 +15,34 @@ function isPalindrome (testableString){
   return (invertedString === normalisedString);
 }
 
+/*Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9
+ и возвращает их в виде целого положительного числа.
+ Если в строке нет ни одной цифры, функция должна вернуть NaN
+ */
+
+function extractNumbers (charSet){
+  let stringSet = '';
+  let tempResult = '';
+  let result = '';
+
+  if (isNaN(charSet)){
+    stringSet = charSet;
+  }else {
+    stringSet = charSet.toString();
+  }
+
+  for (let i = 0; i <= stringSet.length - 1; i++){
+    if(!isNaN(parseInt(stringSet[i],10))){
+      tempResult += parseInt(stringSet[i],10);
+    }
+  }
+
+  result += parseInt(tempResult,10);
+
+  if (isNaN(result)){
+    return NaN;
+  }
+  const numberResult = parseInt(result, 10);
+  return numberResult;
+}
+
