@@ -33,3 +33,7 @@ function extractNumbers (someInput){
   return result;
 }
 
+compareLength();
+isPalindrome();
+extractNumbers();
+
