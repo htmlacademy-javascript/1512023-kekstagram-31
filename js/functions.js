@@ -1,8 +1,6 @@
 /*Функция для проверки длины строки.*/
+const compareLength = (incomingString = '', maxLength = 1) => incomingString.length <= maxLength;
 
-function compareLength (incomingString, maxLength){
-  return (incomingString.length <= maxLength);
-}
 
 /* Функция для проверки, является ли строка палиндромом*/
 
