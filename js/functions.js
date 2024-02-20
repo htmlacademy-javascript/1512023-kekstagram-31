@@ -23,7 +23,7 @@ function isPalindrome (testableString){
 function extractNumbers (charSet){
   let stringSet = '';
   let tempResult = '';
-  let result = '';
+  let result = 0;
 
   if (isNaN(charSet)){
     stringSet = charSet;
@@ -37,12 +37,7 @@ function extractNumbers (charSet){
     }
   }
 
-  result += parseInt(tempResult,10);
-
-  if (isNaN(result)){
-    return NaN;
-  }
-  const numberResult = parseInt(result, 10);
-  return numberResult;
+  result = parseInt(tempResult,10);
+  return result;
 }
 
