@@ -1,8 +1,7 @@
-/*Функция для проверки длины строки.*/
+
 const compareLength = (incomingString = '', maxLength = 1) => incomingString.length <= maxLength;
 
 
-/* Функция для проверки, является ли строка палиндромом*/
 
 function isPalindrome (testableString = ''){
   testableString = testableString.replaceAll(' ', '').toLowerCase();
@@ -13,10 +12,6 @@ function isPalindrome (testableString = ''){
   return (invertedString === testableString);
 }
 
-/*Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9
- и возвращает их в виде целого положительного числа.
- Если в строке нет ни одной цифры, функция должна вернуть NaN
- */
 function extractNumbers (someInput){
   let tempResult = '';
   let result = 0;
