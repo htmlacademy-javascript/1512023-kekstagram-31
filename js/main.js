@@ -54,12 +54,15 @@ function createIdGenerator (min, max) {
 }
 
 const getRandomArrayElement = (elements) =>
-  elements[createRandomIdFromRangeGenerator(0, elements.length - 1)];
+elements[getRandomInteger(0, elements.length - 1)];
+
+console.log(getRandomArrayElement(MESSAGE_SOURCE));
 
 const getIdPhoto = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getIdUrl = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getIdForDescription = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getLikesCount = createRandomIdFromRangeGenerator (LIKES_MIN, LIKES_MAX);
+const getIndexForComments = createRandomIdFromRangeGenerator (LIKES_MIN, LIKES_MAX);
 
 const getComments = getRandomArrayElement(MESSAGE_SOURCE);
 
@@ -86,7 +89,7 @@ const createPhotoDescription = () => ({
   url: 'photos/' + getIdUrl(createIdGenerator()) +'.jpg',
   description: 'The description of the photo Nr. ' + getIdForDescription(createIdGenerator()),
   likes: getLikesCount(createRandomIdFromRangeGenerator()),
-  comments: getComments(getRandomArrayElement()),
+  comments: getRandomArrayElement(MESSAGE_SOURCE),
   //coatColor: getRandomArrayElement(COAT_COLORS),
   //eyesColor: getRandomArrayElement(EYES_COLORS),
 });
