@@ -1,8 +1,6 @@
 
 const compareLength = (incomingString = '', maxLength = 1) => incomingString.length <= maxLength;
 
-
-
 function isPalindrome (testableString = ''){
   testableString = testableString.replaceAll(' ', '').toLowerCase();
   let invertedString = '';
