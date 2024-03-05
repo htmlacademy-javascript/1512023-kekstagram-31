@@ -66,24 +66,23 @@ const getRandomArrayElement = (elements) => elements[getRandomInteger(0, element
 const getIdPhoto = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getIdUrl = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getIdForDescription = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
-const getLikesCount = createRandomIdFromRangeGenerator (LIKES_MIN, LIKES_MAX);
 const getCommentsID = createRandomIdFromRangeGenerator(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX);
 
 const createComments = () => ({
-  id: getCommentsID(createRandomIdFromRangeGenerator()),
+  id: getCommentsID(),
   avatar: `img/avatar-${getRandomInteger(AVATAR_ID_MIN,AVATAR_ID_MAX)}.svg`,
   message: getRandomArrayElement(MESSAGE_SOURCE),
   name: getRandomArrayElement(NAMES),
 });
 
 const createPhotoDescription = () => ({
-  id: getIdPhoto(createIdGenerator()),
-  url: `photos/${getIdUrl(createIdGenerator())}.jpg`,
-  description: `The description of the photo Nr.${getIdForDescription(createIdGenerator())}.`,
-  likes: getLikesCount(createRandomIdFromRangeGenerator()),
+  id: getIdPhoto(),
+  url: `photos/${getIdUrl()}.jpg`,
+  description: `The description of the photo Nr.${getIdForDescription()}.`,
+  likes: getRandomInteger(LIKES_MIN, LIKES_MAX),
   comments: Array.from({length:getRandomInteger(COMMENTS_COUNT_MIN,COMMENTS_COUNT_MAX)}, createComments),
 });
 
 const photoDescriptions = Array.from({length: DESCRIPTIONS_COUNT}, createPhotoDescription);
 
-photoDescriptions();
+console.log(photoDescriptions);
