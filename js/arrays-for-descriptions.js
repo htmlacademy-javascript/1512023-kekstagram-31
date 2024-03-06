@@ -1,4 +1,3 @@
-
 function getArraysForDescriprions() {
   const MESSAGE_SOURCE = [
     'Всё отлично!',
